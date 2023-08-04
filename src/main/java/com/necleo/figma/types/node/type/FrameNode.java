@@ -11,11 +11,38 @@ import lombok.extern.jackson.Jacksonized;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The frame node is a container used to define a layout hierarchy. It is similar to {@code <div>} in HTML.<br>
+ *
+ * It is different from <a href="https://www.figma.com/plugin-docs/api/GroupNode">GroupNode</a>,
+ * which is closer to a folder for layers.<br>
+ *
+ * Frames can be created using <a href="https://www.figma.com/plugin-docs/api/properties/figma-createframe">
+ * figma.createFrame</a>.<br>
+ *
+ * Frames generally have their own size, though the size can be determined by that of its children in the case of auto-layout frames.
+ *
+ * @apiNote ⚠️ It is possible for a user to convert a frame into a group via the UI, and vice-versa.
+ * If you hold onto a node in a long-running plugin, you can't assume its type never changes.
+ */
 @Getter
-@FieldDefaults(level = AccessLevel.PRIVATE)
+@FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 @SuperBuilder
 @Jacksonized
 public class FrameNode extends BaseNode implements AutoLayout, ColorBorder {
+  /**
+   * Returns the parent of this node, if any. This property is not meant to be directly edited.
+   */
+  String parent;
+  /**
+   * An array of nodes that are direct children of this node
+   */
+  List<BaseNode> children;
+  /**
+   * If true, layer is locked and cannot be edited
+   */
+  Boolean locked;
+
   boolean isMask;
   ScaleMode scaleMode;
 
