@@ -1,7 +1,6 @@
-package com.necleo.figma.types.node.type;
+package com.necleo.codemonkey.lib.types.figma;
 
 import com.necleo.codemonkey.lib.types.FigmaNode;
-import com.necleo.figma.types.BaseNode;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
@@ -12,4 +11,4 @@ import lombok.extern.jackson.Jacksonized;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 @Jacksonized
-public class FigmaStarBaseNode extends BaseNode {}
+public class FigmaStarNode extends FigmaNode {}

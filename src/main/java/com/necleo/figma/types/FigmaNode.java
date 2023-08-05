@@ -4,17 +4,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-import com.necleo.figma.types.enums.NodeTypes;
-import com.necleo.figma.types.node.type.FigmaComponentBaseNode;
-import com.necleo.figma.types.node.type.FigmaEllipseBaseNode;
-import com.necleo.figma.types.node.type.FrameNode;
-import com.necleo.figma.types.node.type.FigmaLineBaseNode;
-import com.necleo.figma.types.node.type.FigmaPolygonBaseNode;
-import com.necleo.figma.types.node.type.FigmaRectangleBaseNode;
-import com.necleo.figma.types.node.type.FigmaStarBaseNode;
-import com.necleo.figma.types.node.type.FigmaTextBaseNode;
-import com.necleo.figma.types.node.type.FigmaVectorBaseNode;
+import com.necleo.figma.types.enums.*;
+import com.necleo.codemonkey.lib.types.figma.rect.Rect;
+import com.necleo.figma.types.enums.Effect;
+import com.necleo.figma.types.enums.LayoutAlign;
+import com.necleo.figma.types.node.type.*;
+import com.necleo.figma.types.properties.Constraints;
 import com.necleo.figma.types.properties.VariableAlias;
+import com.necleo.figma.types.properties.reactions.Reaction;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.ToString;
@@ -22,6 +19,7 @@ import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 import lombok.extern.jackson.Jacksonized;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -33,15 +31,15 @@ import java.util.Map;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type", visible = true)
 @JsonSubTypes({
-        @JsonSubTypes.Type(value = FigmaRectangleBaseNode.class, name = "RECTANGLE"),
-        @JsonSubTypes.Type(value = FigmaEllipseBaseNode.class, name = "ELLIPSE"),
-        @JsonSubTypes.Type(value = FigmaLineBaseNode.class, name = "LINE"),
-        @JsonSubTypes.Type(value = FigmaPolygonBaseNode.class, name = "POLYGON"),
-        @JsonSubTypes.Type(value = FigmaStarBaseNode.class, name = "STAR"),
-        @JsonSubTypes.Type(value = FigmaVectorBaseNode.class, name = "VECTOR"),
+        @JsonSubTypes.Type(value = FigmaRectangleNode.class, name = "RECTANGLE"),
+        @JsonSubTypes.Type(value = FigmaEllipseNode.class, name = "ELLIPSE"),
+        @JsonSubTypes.Type(value = FigmaLineNode.class, name = "LINE"),
+        @JsonSubTypes.Type(value = FigmaPolygonNode.class, name = "POLYGON"),
+        @JsonSubTypes.Type(value = FigmaStarNode.class, name = "STAR"),
+        @JsonSubTypes.Type(value = FigmaVectorNode.class, name = "VECTOR"),
         @JsonSubTypes.Type(value = FrameNode.class, name = "FRAME"),
-        @JsonSubTypes.Type(value = FigmaComponentBaseNode.class, name = "COMPONENT"),
-        @JsonSubTypes.Type(value = FigmaTextBaseNode.class, name = "TEXT")
+        @JsonSubTypes.Type(value = FigmaComponentNode.class, name = "COMPONENT"),
+        @JsonSubTypes.Type(value = FigmaTextNode.class, name = "TEXT")
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
@@ -49,7 +47,7 @@ import java.util.Map;
 @SuperBuilder
 @Jacksonized
 @ToString
-public class BaseNode {
+public class FigmaNode {
 
     /**
      * A string uniquely identifying this node within the document.
@@ -102,16 +100,25 @@ public class BaseNode {
      * you should write your code defensively and check that the nodes haven't been removed by the user.
      */
     boolean removed;
-//    boolean locked;
-//    double[][] absoluteTransform;
-//    int[][] relativeTransform;
-//    int x;
-//    int y;
-//    int width;
-//    int height;
-//    Rect absoluteRenderBounds;
-//    Rect absoluteBoundingBox;
-//    int opacity;
-//    List<Reaction> reactions;
-//    Constraints constraints;
+    boolean locked;
+    double[][] absoluteTransform;
+    int[][] relativeTransform;
+    int x;
+    int y;
+    int width;
+    int height;
+    Rect absoluteRenderBounds;
+    Rect absoluteBoundingBox;
+    int opacity;
+    List<Reaction> reactions;
+    Constraints constraints;
+    boolean isMask;
+    List<Effect> effects;
+    String effectsStyleId;
+    LayoutAlign layoutAlign;
+    boolean constrainProportions;
+    LayoutPositioning layoutPositioning;
+    BlendMode blendMode;
+    LayoutSizing layoutSizingHorizontal;
+    LayoutSizing layoutSizingVertical;
 }

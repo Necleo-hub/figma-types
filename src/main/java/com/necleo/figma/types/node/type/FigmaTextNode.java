@@ -1,5 +1,6 @@
-package com.necleo.figma.types.node.type;
+package com.necleo.codemonkey.lib.types.figma;
 
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import com.necleo.codemonkey.lib.types.FigmaNode;
 import com.necleo.codemonkey.lib.types.enums.figmaEnums.*;
 import com.necleo.codemonkey.lib.types.enums.text.TextAutoResize;
@@ -11,8 +12,6 @@ import com.necleo.codemonkey.lib.types.figma.properties.strokes.StrokeGeometry;
 import com.necleo.codemonkey.lib.types.figma.properties.strokes.Strokes;
 import com.necleo.codemonkey.lib.types.figma.properties.text.FontName;
 import java.util.List;
-
-import com.necleo.figma.types.BaseNode;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
@@ -22,24 +21,31 @@ import lombok.extern.jackson.Jacksonized;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 @Jacksonized
-public class FigmaTextBaseNode extends BaseNode {
-  BlendMode blendMode;
-  boolean isMask;
-  List<Effect> effects;
-  String effectsStyleId;
+public class FigmaTextNode extends FigmaNode implements  Common, Effect, AutoLayout{
+//  int opacity;
+//  boolean isMask;
+  @JsonUnwrapped
+        CommonProps common;
+//  //  List<Effect> effects;
+//  String effectsStyleId;
+  @JsonUnwrapped
+        EffectProps effect;
   // geometry related properties
-  List<Fills> fills;
-  String fillStyleId;
-  List<Strokes> strokes;
-  String strokeStyleId;
-  int strokeWeight;
-  StrokeJoin strokeJoin;
-  StrokeAlign strokeAlign;
-  List<String> dashPattern;
-  List<StrokeGeometry> strokeGeometry;
-  StrokeCap strokeCap;
-  int strokeMitterLimit;
-  List<FillGeometry> FillGeometry;
+//  List<Fills> fills;
+//  String fillStyleId;
+//  List<Strokes> strokes;
+//  String strokeStyleId;
+//  int strokeWeight;
+//  StrokeJoin strokeJoin;
+//  StrokeAlign strokeAlign;
+//  List<String> dashPattern;
+//  List<StrokeGeometry> strokeGeometry;
+//  StrokeCap strokeCap;
+//  int strokeMitterLimit;
+//  List<FillGeometry> FillGeometry;
+  @JsonUnwrapped
+          AutoLayoutProps autoLayout;
+
   boolean hasMissingFont;
   TextAutoResize textAutoResize;
   int paragraphIndent;
@@ -47,10 +53,13 @@ public class FigmaTextBaseNode extends BaseNode {
   boolean autoRename;
   String characters;
 
+  BlendMode blendMode;
+
+
   FontName fontName;
   int fontWeight;
-
-  int fontSize;
+  String textAlignHorizontal;
+  String fontSize;
   LineHeight lineHeight;
 
   LetterSpacing letterSpacing;

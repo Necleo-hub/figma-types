@@ -1,5 +1,11 @@
 package com.necleo.figma.types.node.type;
 
+import com.necleo.codemonkey.lib.types.enums.figmaEnums.StrokeAlign;
+import com.necleo.codemonkey.lib.types.enums.figmaEnums.StrokeCap;
+import com.necleo.codemonkey.lib.types.enums.figmaEnums.StrokeJoin;
+import com.necleo.codemonkey.lib.types.figma.properties.fills.FillGeometry;
+import com.necleo.codemonkey.lib.types.figma.properties.fills.Fills;
+import com.necleo.codemonkey.lib.types.figma.properties.strokes.Strokes;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.ToString;
@@ -7,7 +13,6 @@ import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 import lombok.extern.jackson.Jacksonized;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -15,19 +20,7 @@ import java.util.List;
 @Jacksonized
 @ToString
 @Getter
-public class ColorBorderProps {
-    ArrayList<EffectType> effects;
-    String effectsStyleId;
-    // Corner Related Properties
-
-    int cornerRadius;
-    int cornerSmoothing;
-    int topLeftRadius;
-    int topRightRadius;
-    int bottomLeftRadius;
-    int bottomRightRadius;
-
-    // geometry related properties
+public class FillStrokeProps {
     List<Fills> fills;
     String fillStyleId;
     List<Strokes> strokes;
@@ -36,13 +29,8 @@ public class ColorBorderProps {
     StrokeJoin strokeJoin;
     StrokeAlign strokeAlign;
     List<String> dashPattern;
-    List<Object> strokeGeometry;
+    List<String> strokeGeometry;
     StrokeCap strokeCap;
     int strokeMitterLimit;
-    List<com.necleo.codemonkey.lib.types.figma.properties.fills.FillGeometry> FillGeometry;
-    int strokeTopWeight;
-    int strokeBottomWeight;
-    int strokeLeftWeight;
-    int strokeRightWeight;
-
+    List<FillGeometry> FillGeometry;
 }

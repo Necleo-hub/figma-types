@@ -1,6 +1,6 @@
 package com.necleo.figma.types.node.type;
 
-import com.necleo.codemonkey.lib.types.enums.figmaEnums.*;
+import com.necleo.figma.types.enums.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.ToString;
@@ -17,15 +17,17 @@ public class AutoLayoutProps {
     LayoutMode layoutMode;
     CounterAxisSizingMode counterAxisSizingMode;
     PrimaryAxisSizingMode primaryAxisSizingMode;
-    LayoutAlign layoutAlign;
     PrimaryAxisAlignItems primaryAxisAlignItems;
     CounterAxisAlignItems counterAxisAlignItems;
     int width;
-    int layoutGrow;
     int itemSpacing;
     int height;
     int paddingLeft;
     int paddingRight;
     int paddingTop;
     int paddingBottom;
+    boolean itemReverseZIndex;
+    boolean strokesIncludedInLayout;
+    String gridStyleId;
+    boolean clipsContent;
 }
