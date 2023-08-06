@@ -1,6 +1,6 @@
 package com.necleo.figma.types.node.type;
 
-import com.necleo.figma.types.BaseNode;
+import com.necleo.figma.types.FigmaNode;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
@@ -21,7 +21,7 @@ import java.util.List;
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 @SuperBuilder
 @Jacksonized
-public class DocumentNode extends BaseNode{
+public class DocumentNode extends FigmaNode {
     /**
      * An array of canvases attached to the document
      */

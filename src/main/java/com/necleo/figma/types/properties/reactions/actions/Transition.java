@@ -1,7 +1,8 @@
-package com.necleo.codemonkey.lib.types.figma.properties.reactions.actions;
+package com.necleo.figma.types.properties.reactions.actions;
 
 import lombok.Getter;
 import lombok.Setter;
+import com.necleo.figma.types.properties.reactions.actions.Easing;
 
 @Getter
 @Setter

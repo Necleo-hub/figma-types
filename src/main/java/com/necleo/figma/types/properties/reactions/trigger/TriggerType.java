@@ -1,4 +1,4 @@
-package com.necleo.codemonkey.lib.types.figma.properties.reactions.trigger;
+package com.necleo.figma.types.properties.reactions.trigger;
 
 public enum TriggerType {
     ON_CLICK,

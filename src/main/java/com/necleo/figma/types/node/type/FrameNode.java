@@ -1,13 +1,16 @@
 package com.necleo.figma.types.node.type;
 
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
-import com.necleo.figma.types.BaseNode;
+import com.necleo.figma.types.FigmaNode;
+import com.necleo.figma.types.enums.*;
+import com.necleo.figma.types.node.props.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 import lombok.extern.jackson.Jacksonized;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +32,7 @@ import java.util.List;
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 @SuperBuilder
 @Jacksonized
-public class FrameNode extends BaseNode implements AutoLayout, ColorBorder {
+public class FrameNode extends FigmaNode implements AutoLayout, Padding, Corner, FillStroke, StrokeWeight {
   /**
    * Returns the parent of this node, if any. This property is not meant to be directly edited.
    */
@@ -37,74 +40,80 @@ public class FrameNode extends BaseNode implements AutoLayout, ColorBorder {
   /**
    * An array of nodes that are direct children of this node
    */
-  List<BaseNode> children;
+  List<FigmaNode> children;
   /**
    * If true, layer is locked and cannot be edited
    */
-  Boolean locked;
+//  Boolean locked;
 
-  boolean isMask;
+//  boolean isMask;
   ScaleMode scaleMode;
 
-  LayoutMode layoutMode;
-  boolean itemReverseZIndex;
-  boolean strokesIncludedInLayout;
-  // layoutGrids - need to check
-  String gridStyleId;
-  boolean clipsContent;
+//  BlendMode blendMode;
+
+//  LayoutMode layoutMode;
+//  boolean itemReverseZIndex;
+//  boolean strokesIncludedInLayout;
+//  String gridStyleId;
+//  boolean clipsContent;
+
   @JsonUnwrapped
   AutoLayoutProps autoLayout;
 
-//  LayoutMode layoutMode;
-  CounterAxisSizingMode counterAxisSizingMode;
-  PrimaryAxisSizingMode primaryAxisSizingMode;
-  LayoutAlign layoutAlign;
-  PrimaryAxisAlignItems primaryAxisAlignItems;
-  CounterAxisAlignItems counterAxisAlignItems;
-  int width;
-  int layoutGrow;
-  int itemSpacing;
-  int height;
-  int paddingLeft;
-  int paddingRight;
-  int paddingTop;
-  int paddingBottom;
+//  CounterAxisSizingMode counterAxisSizingMode;
+//  PrimaryAxisSizingMode primaryAxisSizingMode;
+//  LayoutAlign layoutAlign;
+//  PrimaryAxisAlignItems primaryAxisAlignItems;
+//  CounterAxisAlignItems counterAxisAlignItems;
+//  int width;
+//  int layoutGrow;
+//  int itemSpacing;
+//  int height;
+//  int paddingLeft;
+//  int paddingRight;
+//  int paddingTop;
+//  int paddingBottom;
 
-//  @Delegate(types = ColorBorderProps.class)
   @JsonUnwrapped
-  ColorBorderProps colorBorder;
+  PaddingProps padding;
 
-  ArrayList<EffectType> effects;
-  String effectsStyleId;
-  // Corner Related Properties
+//  ArrayList<EffectType> effects;
+//  String effectsStyleId;
 
-  int cornerRadius;
-  int cornerSmoothing;
-  int topLeftRadius;
-  int topRightRadius;
-  int bottomLeftRadius;
-  int bottomRightRadius;
+//  int cornerRadius;
+//  int cornerSmoothing;
+//  int topLeftRadius;
+//  int topRightRadius;
+//  int bottomLeftRadius;
+//  int bottomRightRadius;
 
-  // geometry related properties
-  List<Fills> fills;
-  String fillStyleId;
-  List<Strokes> strokes;
-  String strokeStyleId;
-  int strokeWeight;
-  StrokeJoin strokeJoin;
-  StrokeAlign strokeAlign;
-  List<String> dashPattern;
-  List<Object> strokeGeometry;
-  StrokeCap strokeCap;
-  int strokeMitterLimit;
-  List<FillGeometry> FillGeometry;
-  int strokeTopWeight;
-  int strokeBottomWeight;
-  int strokeLeftWeight;
-  int strokeRightWeight;
+  @JsonUnwrapped
+  CornerProps corner;
 
-//  end of color border
+//  List<Fills> fills;
+//  String fillStyleId;
+//  List<Strokes> strokes;
+//  String strokeStyleId;
+//  int strokeWeight;
+//  StrokeJoin strokeJoin;
+//  StrokeAlign strokeAlign;
+//  List<String> dashPattern;
+//  List<Object> strokeGeometry;
+//  StrokeCap strokeCap;
+//  int strokeMitterLimit;
+//  List<FillGeometry> FillGeometry;
+  @JsonUnwrapped
+  FillStrokeProps fillStroke;
+
+//  int strokeTopWeight;
+//  int strokeBottomWeight;
+//  int strokeLeftWeight;
+//  int strokeRightWeight;
+  @JsonUnwrapped
+  StrokeWeightProps strokeWeight;
 
 
-  String layoutPositioning;
+//  String layoutPositioning;
+//  LayoutSizing layoutSizingHorizontal;
+//  LayoutSizing layoutSizingVertical;
 }

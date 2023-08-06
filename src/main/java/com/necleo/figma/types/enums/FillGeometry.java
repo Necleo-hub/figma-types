@@ -1,4 +1,4 @@
-package com.necleo.codemonkey.lib.types.figma.properties.fills;
+package com.necleo.figma.types.enums;
 
 import lombok.AccessLevel;
 import lombok.Builder;

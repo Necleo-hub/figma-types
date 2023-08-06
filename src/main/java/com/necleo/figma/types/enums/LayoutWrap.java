@@ -1,4 +1,4 @@
-package com.necleo.codemonkey.lib.types.enums.figmaEnums;
+package com.necleo.figma.types.enums;
 
 public enum LayoutWrap {
   WRAP,

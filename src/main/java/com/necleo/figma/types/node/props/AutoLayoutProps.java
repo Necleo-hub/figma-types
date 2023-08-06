@@ -1,4 +1,4 @@
-package com.necleo.figma.types.node.type;
+package com.necleo.figma.types.node.props;
 
 import com.necleo.figma.types.enums.*;
 import lombok.AccessLevel;

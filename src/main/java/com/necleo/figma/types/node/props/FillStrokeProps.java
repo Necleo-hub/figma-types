@@ -1,11 +1,11 @@
-package com.necleo.figma.types.node.type;
+package com.necleo.figma.types.node.props;
 
-import com.necleo.codemonkey.lib.types.enums.figmaEnums.StrokeAlign;
-import com.necleo.codemonkey.lib.types.enums.figmaEnums.StrokeCap;
-import com.necleo.codemonkey.lib.types.enums.figmaEnums.StrokeJoin;
+import com.necleo.figma.types.enums.StrokeAlign;
+import com.necleo.figma.types.enums.StrokeCap;
+import com.necleo.figma.types.enums.StrokeJoin;
 import com.necleo.codemonkey.lib.types.figma.properties.fills.FillGeometry;
-import com.necleo.codemonkey.lib.types.figma.properties.fills.Fills;
-import com.necleo.codemonkey.lib.types.figma.properties.strokes.Strokes;
+import com.necleo.figma.types.properties.fills.Fills;
+import com.necleo.figma.types.properties.strokes.Strokes;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.ToString;

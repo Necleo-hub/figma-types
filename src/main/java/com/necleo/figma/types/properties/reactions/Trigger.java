@@ -1,4 +1,4 @@
-package com.necleo.figma.properties.reactions;
+package com.necleo.figma.types.properties.reactions;
 
 import lombok.AccessLevel;
 import lombok.Builder;

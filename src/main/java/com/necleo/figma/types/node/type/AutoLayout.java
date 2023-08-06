@@ -1,6 +1,7 @@
 package com.necleo.figma.types.node.type;
 
-public interface AutoLayout {
-  AutoLayoutProps getAutoLayout();
+import com.necleo.figma.types.node.props.AutoLayoutProps;
 
+public interface AutoLayout {
+    AutoLayoutProps getAutoLayout();
 }

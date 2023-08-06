@@ -1,18 +1,16 @@
-package com.necleo.codemonkey.lib.types.figma;
+package com.necleo.figma.types.node.type;
 
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
-import com.necleo.codemonkey.lib.types.FigmaNode;
-import com.necleo.codemonkey.lib.types.enums.figmaEnums.*;
-import com.necleo.codemonkey.lib.types.enums.text.TextAutoResize;
 import com.necleo.codemonkey.lib.types.figma.properties.LetterSpacing;
 import com.necleo.codemonkey.lib.types.figma.properties.LineHeight;
-import com.necleo.codemonkey.lib.types.figma.properties.fills.FillGeometry;
-import com.necleo.codemonkey.lib.types.figma.properties.fills.Fills;
-import com.necleo.codemonkey.lib.types.figma.properties.strokes.StrokeGeometry;
-import com.necleo.codemonkey.lib.types.figma.properties.strokes.Strokes;
 import com.necleo.codemonkey.lib.types.figma.properties.text.FontName;
-import java.util.List;
-import lombok.*;
+import com.necleo.figma.types.FigmaNode;
+import com.necleo.figma.types.enums.BlendMode;
+import com.necleo.figma.types.enums.PrimaryAxisAlignItems;
+import com.necleo.figma.types.enums.text.TextAutoResize;
+import com.necleo.figma.types.node.props.AutoLayoutProps;
+import lombok.AccessLevel;
+import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 import lombok.extern.jackson.Jacksonized;
@@ -21,15 +19,13 @@ import lombok.extern.jackson.Jacksonized;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 @Jacksonized
-public class FigmaTextNode extends FigmaNode implements  Common, Effect, AutoLayout{
+public class FigmaTextNode extends FigmaNode implements  AutoLayout{
 //  int opacity;
 //  boolean isMask;
-  @JsonUnwrapped
-        CommonProps common;
+
 //  //  List<Effect> effects;
 //  String effectsStyleId;
-  @JsonUnwrapped
-        EffectProps effect;
+
   // geometry related properties
 //  List<Fills> fills;
 //  String fillStyleId;
@@ -44,7 +40,7 @@ public class FigmaTextNode extends FigmaNode implements  Common, Effect, AutoLay
 //  int strokeMitterLimit;
 //  List<FillGeometry> FillGeometry;
   @JsonUnwrapped
-          AutoLayoutProps autoLayout;
+  AutoLayoutProps autoLayout;
 
   boolean hasMissingFont;
   TextAutoResize textAutoResize;

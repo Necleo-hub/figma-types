@@ -1,6 +1,6 @@
-package com.necleo.codemonkey.lib.types.figma;
+package com.necleo.figma.types.node.type;
 
-import com.necleo.codemonkey.lib.types.FigmaNode;
+import com.necleo.figma.types.FigmaNode;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;

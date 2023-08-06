@@ -1,4 +1,6 @@
-package com.necleo.codemonkey.lib.types.figma;
+package com.necleo.figma.types.node.type;
+
+import com.necleo.figma.types.node.props.PaddingProps;
 
 public interface Padding {
     PaddingProps getPadding();

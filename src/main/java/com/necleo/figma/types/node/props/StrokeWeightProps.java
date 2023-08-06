@@ -1,4 +1,4 @@
-package com.necleo.figma.types.node.type;
+package com.necleo.figma.types.node.props;
 
 public class StrokeWeightProps {
     int strokeTopWeight;

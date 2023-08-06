@@ -1,6 +1,6 @@
-package com.necleo.codemonkey.lib.types.figma.properties.reactions.trigger;
+package com.necleo.figma.types.properties.reactions.trigger;
 
-import com.necleo.codemonkey.lib.types.figma.properties.reactions.trigger.Trigger;
+import com.necleo.figma.types.properties.reactions.trigger.Trigger;
 import lombok.Getter;
 
 @Getter

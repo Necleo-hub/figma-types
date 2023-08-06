@@ -1,6 +1,6 @@
-package com.necleo.codemonkey.lib.types.figma.properties.vector;
+package com.necleo.figma.types.properties.vector;
 
-import com.necleo.codemonkey.lib.types.figma.properties.vector.regions.RegionType;
+import com.necleo.figma.types.properties.vector.regions.RegionType;
 import com.necleo.codemonkey.lib.types.figma.properties.vector.segment.Segment;
 import java.util.List;
 import lombok.AllArgsConstructor;

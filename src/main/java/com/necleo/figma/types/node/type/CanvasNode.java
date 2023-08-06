@@ -1,6 +1,6 @@
 package com.necleo.figma.types.node.type;
 
-import com.necleo.figma.types.BaseNode;
+import com.necleo.figma.types.FigmaNode;
 import com.necleo.figma.types.properties.ExportSetting;
 import com.necleo.figma.types.properties.FlowStartingPoint;
 import com.necleo.figma.types.properties.PrototypeDevice;
@@ -17,11 +17,11 @@ import java.util.List;
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 @SuperBuilder
 @Jacksonized
-public class CanvasNode extends BaseNode {
+public class CanvasNode extends FigmaNode {
     /**
      * An array of top level layers on the canvas
      */
-    List<BaseNode> children;
+    List<FigmaNode> children;
     /**
      * Background color of the canvas.
      */

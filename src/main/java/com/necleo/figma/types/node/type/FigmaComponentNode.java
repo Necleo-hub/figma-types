@@ -1,7 +1,9 @@
-package com.necleo.codemonkey.lib.types.figma;
+package com.necleo.figma.types.node.type;
 
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
-import com.necleo.codemonkey.lib.types.FigmaNode;
+import com.necleo.figma.types.FigmaNode;
+import com.necleo.figma.types.enums.LayoutWrap;
+import com.necleo.figma.types.node.props.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
@@ -12,16 +14,13 @@ import lombok.extern.jackson.Jacksonized;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 @Jacksonized
-public class FigmaComponentNode extends FigmaNode implements Common, Effect, Corner, FillStroke, AutoLayout, Padding{
+public class FigmaComponentNode extends FigmaNode implements Corner, FillStroke, AutoLayout, Padding{
 //  int opacity;
 //  boolean isMask;
-  @JsonUnwrapped
-  CommonProps common;
 
 //  List<Effect> effects;
 //  String effectsStyleId;
-  @JsonUnwrapped
-  EffectProps effect;
+
 
   // Corner Related Properties\
 
@@ -32,7 +31,7 @@ public class FigmaComponentNode extends FigmaNode implements Common, Effect, Cor
 //  int bottomLeftRadius;
 //  int bottomRightRadius;
   @JsonUnwrapped
-  CornerProps corner;
+CornerProps corner;
 
   // geometry related properties
 //  List<Fills> fills;
@@ -55,7 +54,7 @@ public class FigmaComponentNode extends FigmaNode implements Common, Effect, Cor
 //  int strokeLeftWeight;
 //  int strokeRightWeight;
   @JsonUnwrapped
-  StrokeWeightProps strokeWeight;
+StrokeWeightProps strokeWeight;
 
 //  LayoutMode layoutMode;
 //  PrimaryAxisSizingMode primaryAxisSizingMode;
@@ -78,4 +77,7 @@ public class FigmaComponentNode extends FigmaNode implements Common, Effect, Cor
 //  int itemSpacing;
   @JsonUnwrapped
   PaddingProps padding;
+
+  int counterAxisSpacing;
+  LayoutWrap layoutWrap;
 }

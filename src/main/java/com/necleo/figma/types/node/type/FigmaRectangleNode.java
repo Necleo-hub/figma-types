@@ -1,16 +1,12 @@
-package com.necleo.codemonkey.lib.types.figma;
+package com.necleo.figma.types.node.type;
 
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
-import com.necleo.codemonkey.lib.types.FigmaNode;
-import com.necleo.codemonkey.lib.types.enums.figmaEnums.*;
-import com.necleo.codemonkey.lib.types.figma.properties.fills.FillGeometry;
-import com.necleo.codemonkey.lib.types.figma.properties.fills.Fills;
-import com.necleo.codemonkey.lib.types.figma.properties.strokes.StrokeGeometry;
-import com.necleo.codemonkey.lib.types.figma.properties.strokes.Strokes;
-
-import java.awt.*;
-import java.util.List;
-import lombok.*;
+import com.necleo.figma.types.FigmaNode;
+import com.necleo.figma.types.node.props.AutoLayoutProps;
+import com.necleo.figma.types.node.props.CornerProps;
+import com.necleo.figma.types.node.props.StrokeWeightProps;
+import lombok.AccessLevel;
+import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 import lombok.extern.jackson.Jacksonized;
@@ -19,16 +15,14 @@ import lombok.extern.jackson.Jacksonized;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 @Jacksonized
-@NoArgsConstructor
-public class FigmaRectangleNode extends FigmaNode implements  Common, Effect, Corner, AutoLayout, StrokeWeight {
+//@NoArgsConstructor
+public class FigmaRectangleNode extends FigmaNode implements Corner, AutoLayout, StrokeWeight {
 //  int opacity;
 //  boolean isMask;
-  @JsonUnwrapped
-        CommonProps common;
+
 //  //  List<Effect> effects;
 //  String effectStyleId;
-  @JsonUnwrapped
-        EffectProps effect;
+
   // Corner Related Properties
 //  int cornerRadius;
 //  int cornerSmoothing;
@@ -37,7 +31,7 @@ public class FigmaRectangleNode extends FigmaNode implements  Common, Effect, Co
 //  int bottomLeftRadius;
 //  int bottomRightRadius;
   @JsonUnwrapped
-          CornerProps corner;
+  CornerProps corner;
   // geometry related properties
 //  List<Fills> fills;
 //  String fillStyleId;
@@ -52,11 +46,11 @@ public class FigmaRectangleNode extends FigmaNode implements  Common, Effect, Co
 //  int strokeMiterLimit;
 //  List<FillGeometry> fillGeometry;
   @JsonUnwrapped
-          AutoLayoutProps autoLayout;
+  AutoLayoutProps autoLayout;
 //  int strokeTopWeight;
 //  int strokeBottomWeight;
 //  int strokeLeftWeight;
 //  int strokeRightWeight;
   @JsonUnwrapped
-  StrokeWeightProps strokeWeight;
+StrokeWeightProps strokeWeight;
 }

@@ -1,5 +1,6 @@
-package com.necleo.codemonkey.lib.types.figma.properties.strokes;
+package com.necleo.figma.types.properties.strokes;
 
+import com.necleo.figma.types.properties.fills.Color;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

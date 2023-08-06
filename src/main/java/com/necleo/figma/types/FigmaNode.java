@@ -107,6 +107,7 @@ public class FigmaNode {
     int y;
     int width;
     int height;
+    int layoutGrow;
     Rect absoluteRenderBounds;
     Rect absoluteBoundingBox;
     int opacity;

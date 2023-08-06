@@ -1,13 +1,13 @@
-package com.necleo.codemonkey.lib.types.figma.properties.fills;
+package com.necleo.figma.types.properties.fills;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.necleo.codemonkey.lib.types.figma.*;
-import com.necleo.codemonkey.lib.types.figma.properties.fills.subtypes.FillsImage;
-import com.necleo.codemonkey.lib.types.figma.properties.fills.subtypes.FillsSolid;
+import com.necleo.figma.types.properties.fills.subtypes.FillsImage;
+import com.necleo.figma.types.properties.fills.subtypes.FillsSolid;
 import java.util.List;
+
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;

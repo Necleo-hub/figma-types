@@ -1,5 +1,6 @@
-package com.necleo.codemonkey.lib.types.figma.properties.reactions.actions;
+package com.necleo.figma.types.properties.reactions.actions;
 
+import com.necleo.figma.types.properties.reactions.actions.ActionType;
 import lombok.Getter;
 
 @Getter

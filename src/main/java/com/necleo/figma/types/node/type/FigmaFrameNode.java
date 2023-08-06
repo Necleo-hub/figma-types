@@ -1,33 +1,26 @@
-package com.necleo.codemonkey.lib.types.figma;
+package com.necleo.figma.types.node.type;
 
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
-import com.necleo.codemonkey.lib.types.FigmaNode;
-import com.necleo.codemonkey.lib.types.enums.figmaEnums.*;
-import com.necleo.codemonkey.lib.types.figma.properties.fills.FillGeometry;
-import com.necleo.codemonkey.lib.types.figma.properties.fills.Fills;
-import com.necleo.codemonkey.lib.types.figma.properties.strokes.Strokes;
-import com.necleo.codemonkey.service.flutter.InferredAutoLayout;
-import java.util.List;
+import com.necleo.figma.types.FigmaNode;
+import com.necleo.figma.types.enums.LayoutWrap;
+import com.necleo.figma.types.node.props.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 import lombok.extern.jackson.Jacksonized;
 
+
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 @Jacksonized
-public class FigmaFrameNode extends FigmaNode implements  Common, Effect, Corner, FillStroke, StrokeWeight, AutoLayout, Padding, LayoutAlign{
+public class FigmaFrameNode extends FigmaNode implements Corner, FillStroke, StrokeWeight, AutoLayout, Padding{
 //  int opacity;
 //  boolean isMask;
-  @JsonUnwrapped
-  CommonProps common;
 
 //  //  ArrayList<EffectType> effects;
 //  String effectsStyleId;
-  @JsonUnwrapped
-  EffectProps effect;
 
 //  // Corner Related Properties
 //
@@ -38,7 +31,7 @@ public class FigmaFrameNode extends FigmaNode implements  Common, Effect, Corner
 //  int bottomLeftRadius;
 //  int bottomRightRadius;
   @JsonUnwrapped
-  CornerProps corner;
+CornerProps corner;
 
 //  // geometry related properties
 //  List<Fills> fills;
@@ -54,19 +47,17 @@ public class FigmaFrameNode extends FigmaNode implements  Common, Effect, Corner
 //  int strokeMitterLimit;
 //  List<FillGeometry> FillGeometry;
   @JsonUnwrapped
-  FillStrokeProps fillStroke;
+FillStrokeProps fillStroke;
 
 //  int strokeTopWeight;
 //  int strokeBottomWeight;
 //  int strokeLeftWeight;
 //  int strokeRightWeight;
   @JsonUnwrapped
-  StrokeWeightProps strokeWeight;
+StrokeWeightProps strokeWeight;
 
 //  InferredAutoLayout inferredAutoLayout;
-  LayoutSizing layoutSizingHorizontal;
-  LayoutSizing layoutSizingVertical;
-  LayoutWrap layoutWrap;
+
 
 //  LayoutMode layoutMode;
 //  PrimaryAxisSizingMode primaryAxisSizingMode;
@@ -78,7 +69,7 @@ public class FigmaFrameNode extends FigmaNode implements  Common, Effect, Corner
 //  String gridStyleId;
 //  boolean clipsContent;
   @JsonUnwrapped
-  AutoLayoutProps autoLayout;
+AutoLayoutProps autoLayout;
 
   // padding properties
 //  int paddingLeft;
@@ -89,15 +80,10 @@ public class FigmaFrameNode extends FigmaNode implements  Common, Effect, Corner
   @JsonUnwrapped
   PaddingProps padding;
 
-
-
   // layoutGrids - need to check
 //  LayoutAlign layoutAlign;
 //  int layoutGrow;
-  @JsonUnwrapped
-  LayoutAlignProps layoutAlign;
 
-  LayoutPositioning layoutPositioning;
   int counterAxisSpacing;
-
+  LayoutWrap layoutWrap;
 }

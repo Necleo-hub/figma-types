@@ -1,4 +1,4 @@
-package com.necleo.codemonkey.lib.types.enums.text;
+package com.necleo.figma.types.enums.text;
 
 public enum TextAlignVertical {
   TOP,

@@ -1,8 +1,8 @@
 package com.necleo.figma.types.properties.reactions;
 
 
-import com.necleo.codemonkey.lib.types.figma.properties.reactions.actions.Action;
-import com.necleo.codemonkey.lib.types.figma.properties.reactions.trigger.Trigger;
+import com.necleo.figma.types.properties.reactions.actions.Action;
+import com.necleo.figma.types.properties.reactions.trigger.Trigger;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,5 +11,4 @@ import lombok.Setter;
 public class Reaction {
     Action action;
     Trigger trigger;
-
 }

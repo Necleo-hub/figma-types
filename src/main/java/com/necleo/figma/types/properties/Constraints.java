@@ -1,7 +1,8 @@
-package com.necleo.codemonkey.lib.types.figma.properties;
+package com.necleo.figma.types.properties;
 
-import com.necleo.codemonkey.lib.types.enums.figmaEnums.HorizontalConstraint;
-import com.necleo.codemonkey.lib.types.enums.figmaEnums.VerticalConstraint;
+
+import com.necleo.figma.types.enums.HorizontalConstraint;
+import com.necleo.figma.types.enums.VerticalConstraint;
 import lombok.Getter;
 
 @Getter

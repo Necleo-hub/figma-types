@@ -1,8 +1,12 @@
-package com.necleo.codemonkey.lib.types.figma.properties.reactions.trigger;
+package com.necleo.figma.types.properties.reactions.trigger;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import lombok.Getter;
+import com.necleo.figma.types.properties.reactions.trigger.TriggerType;
+import com.necleo.figma.types.properties.reactions.trigger.MouseTrigger;
+import com.necleo.figma.types.properties.reactions.trigger.AfterTimeoutTrigger;
+import com.necleo.figma.types.properties.reactions.trigger.OnClickTrigger;
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
 @JsonSubTypes({

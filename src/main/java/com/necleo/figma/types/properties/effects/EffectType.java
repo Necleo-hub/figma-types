@@ -1,7 +1,9 @@
-package com.necleo.codemonkey.lib.types.figma.properties.effects;
+package com.necleo.figma.types.properties.effects;
 
-import com.necleo.codemonkey.lib.types.enums.figmaEnums.BlendMode;
-import com.necleo.codemonkey.lib.types.enums.figmaEnums.Effect;
+import com.necleo.figma.types.enums.BlendMode;
+import com.necleo.figma.types.enums.Effect;
+import com.necleo.codemonkey.lib.types.figma.properties.effects.EffectColor;
+import com.necleo.codemonkey.lib.types.figma.properties.effects.OffsetType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
