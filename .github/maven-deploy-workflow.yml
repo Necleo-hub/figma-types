@@ -1,0 +1,26 @@
+name: Deploy Maven Package
+
+on:
+  push:
+    branches:
+      - type-prop-fixing  # or your preferred branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'  # or your preferred Java version
+
+      - name: Build and Deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mvn clean install -DskipTests
+          mvn deploy -DskipTests -P release -Dmaven.test.skip=true --settings .github/settings.xml
