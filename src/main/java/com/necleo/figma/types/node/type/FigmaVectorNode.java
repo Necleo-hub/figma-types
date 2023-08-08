@@ -3,9 +3,11 @@ package com.necleo.figma.types.node.type;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import com.necleo.codemonkey.lib.types.figma.properties.vector.VectorPaths;
 import com.necleo.figma.types.FigmaNode;
+import com.necleo.figma.types.enums.HandleMirroring;
 import com.necleo.figma.types.node.props.CornerProps;
 import com.necleo.figma.types.node.props.FillStrokeProps;
 import com.necleo.figma.types.node.props.StrokeWeightProps;
+import com.necleo.figma.types.properties.vector.VectorNetwork;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
@@ -18,7 +20,7 @@ import java.util.List;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 @Jacksonized
-public class FigmaVectorNode extends FigmaNode implements Corner, FillStroke{
+public class FigmaVectorNode extends FigmaNode implements  FillStroke{
 
 //  int opacity;
 //  boolean isMask;
@@ -28,14 +30,10 @@ public class FigmaVectorNode extends FigmaNode implements Corner, FillStroke{
 
   // Corner Related Properties
 
-//  int cornerRadius;
-//  int cornerSmoothing;
-//  int topLeftRadius;
-//  int topRightRadius;
-//  int bottomLeftRadius;
-//  int bottomRightRadius;
-  @JsonUnwrapped
-CornerProps corner;
+  int cornerRadius;
+  int cornerSmoothing;
+
+
 
   // geometry related properties
 //  List<Fills> fills;
@@ -63,5 +61,6 @@ StrokeWeightProps strokeWeight;
   // vector
   //  VectorNetwork vectorNetwork;
   List<VectorPaths> vectorPaths;
-
+  VectorNetwork vectorNetwork;
+  HandleMirroring handleMirroring;
 }

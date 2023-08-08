@@ -1,10 +1,16 @@
 package com.necleo.figma.types.node.type;
 
+import com.necleo.figma.types.enums.Paint;
+import com.necleo.figma.types.properties.FlowStartingPoint;
+import com.necleo.figma.types.properties.Guide;
+import com.necleo.figma.types.properties.SelectedTextRange;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 import lombok.extern.jackson.Jacksonized;
+
+import java.util.List;
 
 /**
  * The page node is always a descendent of the
@@ -16,4 +22,14 @@ import lombok.extern.jackson.Jacksonized;
 @SuperBuilder
 @Jacksonized
 public class PageNode {
+    List<Guide> guides;
+
+//    List<SceneNode> selection;
+    SelectedTextRange selectedTextRange;
+    List<FlowStartingPoint> flowStartingPoints;
+    List<Paint> backgrounds;
+    List<Paint> prototypeBackgrounds;
+
+    //FrameNode | GroupNode | ComponentNode | InstanceNode prototypeStartNode;
+
 }

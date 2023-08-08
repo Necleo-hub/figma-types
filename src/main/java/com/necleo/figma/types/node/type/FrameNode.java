@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import com.necleo.figma.types.FigmaNode;
 import com.necleo.figma.types.enums.*;
 import com.necleo.figma.types.node.props.*;
+import com.necleo.figma.types.properties.OverlayBackground;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
@@ -116,4 +117,10 @@ public class FrameNode extends FigmaNode implements AutoLayout, Padding, Corner,
 //  String layoutPositioning;
 //  LayoutSizing layoutSizingHorizontal;
 //  LayoutSizing layoutSizingVertical;
+
+  OverflowDirection overflowDirection;
+  int numberOfFixedChildren;
+  OverlayPositionType overlayPositionType;
+  OverlayBackground overlayBackground;
+  OverlayBackgroundInteraction overlayBackgroundInteraction;
 }

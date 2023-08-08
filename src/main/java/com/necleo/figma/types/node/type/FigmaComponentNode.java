@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import com.necleo.figma.types.FigmaNode;
 import com.necleo.figma.types.enums.LayoutWrap;
 import com.necleo.figma.types.node.props.*;
+import java.util.List;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
@@ -80,4 +81,10 @@ StrokeWeightProps strokeWeight;
 
   int counterAxisSpacing;
   LayoutWrap layoutWrap;
+
+  List<FigmaInstanceNode> instances;
+  String description; //2
+  boolean remote; // 2
+  String key; //2
+
 }

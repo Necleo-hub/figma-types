@@ -44,4 +44,5 @@ AutoLayoutProps autoLayout;
 //  int strokeRightWeight;
   @JsonUnwrapped
 StrokeWeightProps strokeWeight;
+
 }

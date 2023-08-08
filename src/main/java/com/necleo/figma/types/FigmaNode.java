@@ -99,6 +99,7 @@ public class FigmaNode {
      * If your plugin stays open for a while and stores references to nodes,
      * you should write your code defensively and check that the nodes haven't been removed by the user.
      */
+    boolean isAsset;
     boolean removed;
     boolean locked;
     double[][] absoluteTransform;

@@ -1,4 +1,4 @@
-package com.necleo.codemonkey.lib.types.figma.properties;
+package com.necleo.figma.types.properties;
 
 import lombok.Getter;
 

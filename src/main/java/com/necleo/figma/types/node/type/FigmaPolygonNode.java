@@ -17,6 +17,8 @@ import lombok.extern.jackson.Jacksonized;
 @Jacksonized
 public class FigmaPolygonNode extends FigmaNode {
 
+  int pointCount;
+
 //  int opacity;
 //  boolean isMask;
 

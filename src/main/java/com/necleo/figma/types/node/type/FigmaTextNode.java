@@ -1,13 +1,17 @@
 package com.necleo.figma.types.node.type;
 
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
-import com.necleo.codemonkey.lib.types.figma.properties.LetterSpacing;
-import com.necleo.codemonkey.lib.types.figma.properties.LineHeight;
+import com.necleo.figma.types.properties.LeadingTrim;
+import com.necleo.figma.types.properties.LetterSpacing;
+import com.necleo.figma.types.properties.LineHeight;
 import com.necleo.codemonkey.lib.types.figma.properties.text.FontName;
 import com.necleo.figma.types.FigmaNode;
 import com.necleo.figma.types.enums.BlendMode;
 import com.necleo.figma.types.enums.PrimaryAxisAlignItems;
+import com.necleo.figma.types.enums.text.TextAlignHorizontal;
+import com.necleo.figma.types.enums.text.TextAlignVertical;
 import com.necleo.figma.types.enums.text.TextAutoResize;
+import com.necleo.figma.types.enums.text.TextTruncation;
 import com.necleo.figma.types.node.props.AutoLayoutProps;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -54,9 +58,18 @@ public class FigmaTextNode extends FigmaNode implements  AutoLayout{
 
   FontName fontName;
   int fontWeight;
-  String textAlignHorizontal;
+  TextAlignHorizontal textAlignHorizontal;
+  TextAlignVertical textAlignVertical;
+  TextTruncation textTruncation;
+  int maxLines;
+  int listSpacing;
+  boolean hangingPunctuation;
+  boolean hangingList;
   String fontSize;
   LineHeight lineHeight;
+  LeadingTrim leadingTrim;
+  String textStyleId;
+
 
   LetterSpacing letterSpacing;
 

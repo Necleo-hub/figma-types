@@ -11,4 +11,7 @@ import lombok.extern.jackson.Jacksonized;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 @Jacksonized
-public class FigmaStarNode extends FigmaNode {}
+public class FigmaStarNode extends FigmaNode {
+    int pointCount;
+    int innerRadius;
+}

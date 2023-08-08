@@ -16,4 +16,7 @@ import lombok.extern.jackson.Jacksonized;
 public class FigmaGroupNode extends FigmaNode implements FillStroke {
     @JsonUnwrapped
     FillStrokeProps fillStroke;
+
+
+//    List<SceneNode> children;
 }

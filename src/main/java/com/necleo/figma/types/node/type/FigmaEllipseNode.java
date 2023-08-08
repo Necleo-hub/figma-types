@@ -2,20 +2,30 @@ package com.necleo.figma.types.node.type;
 
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import com.necleo.figma.types.FigmaNode;
+import com.necleo.figma.types.enums.ComponentPropertyReferences;
 import com.necleo.figma.types.node.props.AutoLayoutProps;
 import com.necleo.figma.types.node.props.CornerProps;
 import com.necleo.figma.types.node.props.StrokeWeightProps;
+import com.necleo.figma.types.properties.ArcData;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 import lombok.extern.jackson.Jacksonized;
+import java.util.List;
 
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 @Jacksonized
 public class FigmaEllipseNode extends FigmaNode implements Corner, AutoLayout, StrokeWeight{
+
+  ArcData arcData;
+
+  ComponentPropertyReferences componentPropertyReferences;
+
+  List<String> resolvedVariableModes;
+  List<String> explicitVariableModes;
 
 //  int opacity;
 //  boolean isMask;

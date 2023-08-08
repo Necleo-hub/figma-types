@@ -30,4 +30,5 @@ public class FigmaComponentSetNode extends FigmaNode implements Padding, AutoLay
     @JsonUnwrapped
     CornerProps corner;
 
+    FigmaComponentNode defaultVariant;
 }

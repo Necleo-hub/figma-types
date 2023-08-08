@@ -1,5 +1,6 @@
 package com.necleo.figma.types.node.type;
 
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import com.necleo.figma.types.FigmaNode;
 import com.necleo.figma.types.node.props.CornerProps;
@@ -16,6 +17,11 @@ import lombok.extern.jackson.Jacksonized;
 @SuperBuilder
 @Jacksonized
 public class FigmaInstanceNode extends FigmaNode implements FillStroke, Corner, StrokeWeight {
+    FigmaComponentNode mainComponent;
+    int scaleFactor;
+    List<FigmaInstanceNode> exposedInstance;
+    boolean isExposedInstance;
+    
     @JsonUnwrapped
     FillStrokeProps fillStroke;
 
