@@ -25,7 +25,7 @@ public class FillStrokeProps {
     String fillStyleId;
     List<Strokes> strokes;
     String strokeStyleId;
-    int strokeWeight;
+    String strokeWeight;
     StrokeJoin strokeJoin;
     StrokeAlign strokeAlign;
     List<String> dashPattern;
