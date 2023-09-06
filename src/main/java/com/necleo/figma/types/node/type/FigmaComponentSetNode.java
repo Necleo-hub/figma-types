@@ -9,12 +9,14 @@ import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 import lombok.extern.jackson.Jacksonized;
 
+import java.util.List;
+
 
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 @Jacksonized
-public class FigmaComponentSetNode extends FigmaNode implements Padding, AutoLayout, FillStroke, StrokeWeight, Corner {
+public class FigmaComponentSetNode extends FigmaNode implements Padding, AutoLayout, FillStroke, StrokeWeight, Corner, Children {
     @JsonUnwrapped
     PaddingProps padding;
 
@@ -29,6 +31,8 @@ public class FigmaComponentSetNode extends FigmaNode implements Padding, AutoLay
 
     @JsonUnwrapped
     CornerProps corner;
+
+    List<FigmaNode> children;
 
     FigmaComponentNode defaultVariant;
 }

@@ -10,12 +10,14 @@ import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 import lombok.extern.jackson.Jacksonized;
 
+import java.util.List;
+
 
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 @Jacksonized
-public class FigmaFrameNode extends FigmaNode implements Corner, FillStroke, StrokeWeight, AutoLayout, Padding{
+public class FigmaFrameNode extends FigmaNode implements Corner, FillStroke, StrokeWeight, AutoLayout, Padding, Children{
 //  int opacity;
 //  boolean isMask;
 
@@ -86,5 +88,7 @@ AutoLayoutProps autoLayout;
 
   int counterAxisSpacing;
   LayoutWrap layoutWrap;
+
+  List<FigmaNode> children;
 
 }

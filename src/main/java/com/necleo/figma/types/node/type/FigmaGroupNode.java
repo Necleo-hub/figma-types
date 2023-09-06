@@ -9,14 +9,16 @@ import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 import lombok.extern.jackson.Jacksonized;
 
+import java.util.List;
+
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 @Jacksonized
-public class FigmaGroupNode extends FigmaNode implements FillStroke {
+public class FigmaGroupNode extends FigmaNode implements FillStroke, Children {
     @JsonUnwrapped
     FillStrokeProps fillStroke;
 
+    List<FigmaNode> children;
 
-//    List<SceneNode> children;
 }

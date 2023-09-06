@@ -16,7 +16,7 @@ import lombok.extern.jackson.Jacksonized;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 @Jacksonized
-public class FigmaInstanceNode extends FigmaNode implements FillStroke, Corner, StrokeWeight {
+public class FigmaInstanceNode extends FigmaNode implements FillStroke, Corner, StrokeWeight, Children {
     FigmaComponentNode mainComponent;
     int scaleFactor;
     List<FigmaInstanceNode> exposedInstance;
@@ -30,4 +30,6 @@ public class FigmaInstanceNode extends FigmaNode implements FillStroke, Corner, 
 
     @JsonUnwrapped
     StrokeWeightProps strokeWeight;
+
+    List<FigmaNode> children;
 }
