@@ -123,4 +123,5 @@ public class FigmaNode {
     BlendMode blendMode;
     LayoutSizing layoutSizingHorizontal;
     LayoutSizing layoutSizingVertical;
+    OverflowDirection overflowDirection;
 }
