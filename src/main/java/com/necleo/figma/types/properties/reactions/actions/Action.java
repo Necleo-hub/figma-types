@@ -1,28 +1,26 @@
-package com.necleo.codemonkey.lib.types.figma.properties.reactions.actions;
+package com.necleo.figma.types.properties.reactions.actions;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.necleo.figma.types.enums.figmaenums.ActionType;
+import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.Setter;
+import lombok.experimental.FieldDefaults;
+import lombok.experimental.SuperBuilder;
+import lombok.extern.jackson.Jacksonized;
 
-import java.util.Vector;
-
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type", visible = true)
 @JsonSubTypes({
-        @JsonSubTypes.Type(value = BackAction.class, name = "BACK"),
-        @JsonSubTypes.Type(value = UrlAction.class, name = "URL"),
-        @JsonSubTypes.Type(value = UpdateMediaRuntimeAction.class, name = "UPDATE_MEDIA_RUNTIME"),
-        @JsonSubTypes.Type(value = NodeAction.class, name = "NODE")
+  @JsonSubTypes.Type(value = UrlAction.class, name = "URL"),
+  @JsonSubTypes.Type(value = NodeAction.class, name = "NODE"),
+  @JsonSubTypes.Type(value = MediaAction.class, name = "MEDIA_RUNTIME_UPDATE"),
+  @JsonSubTypes.Type(value = Action.class, name = "BACK"),
+  @JsonSubTypes.Type(value = Action.class, name = "CLOSE"),
 })
 @Getter
-public abstract class Action {
-//    BackAction backAction;
-//    NodeAction nodeAction;
-//    UrlAction urlAction;
-//    UpdateMediaRuntimeAction updateMediaRuntimeAction;
-    // Common fields and methods for all subtypes
-
-    public abstract ActionType getType();
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+@SuperBuilder
+@Jacksonized
+public class Action {
+  ActionType type;
 }
-
-

@@ -11,6 +11,6 @@ import lombok.extern.jackson.Jacksonized;
 @Builder
 @Jacksonized
 public class VectorPaths {
-  private String windingRule;
-  private String data;
+  String windingRule;
+  String data;
 }

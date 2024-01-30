@@ -1,7 +1,8 @@
-package com.necleo.codemonkey.lib.types.figma.properties.vector.regions;
+package com.necleo.figma.types.properties.vector.regions;
 
-import com.necleo.codemonkey.lib.types.figma.properties.fills.Fills;
 import java.util.ArrayList;
+
+import com.necleo.figma.types.properties.fills.Fills;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
