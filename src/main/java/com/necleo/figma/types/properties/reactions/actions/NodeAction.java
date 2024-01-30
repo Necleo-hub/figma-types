@@ -1,24 +1,20 @@
-package com.necleo.codemonkey.lib.types.figma.properties.reactions.actions;
+package com.necleo.figma.types.properties.reactions.actions;
 
+import com.necleo.figma.types.enums.figmaenums.NavigationType;
+import com.necleo.figma.types.properties.reactions.transition.Transition;
+import lombok.AccessLevel;
 import lombok.Getter;
-import java.util.Vector;
+import lombok.experimental.FieldDefaults;
+import lombok.experimental.SuperBuilder;
+import lombok.extern.jackson.Jacksonized;
 
 @Getter
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+@SuperBuilder
+@Jacksonized
 public class NodeAction extends Action {
-    private String destinationId;
-    private Navigation navigation;
-    private Transition transition;
-    private Boolean preserveScrollPosition;
-    private Vector overlayRelativePosition;
-    private Boolean resetVideoPosition;
-    private Boolean resetScrollPosition;
-    private Boolean resetInteractiveComponents;
-
-    // Specific fields and methods for NODE type
-
-    // Getters and Setters for the specific fields
-    @Override
-    public ActionType getType() {
-        return ActionType.NODE;
-    }
+  String destinationId;
+  NavigationType navigation;
+  Transition transition;
+  boolean resetVideoPosition;
 }

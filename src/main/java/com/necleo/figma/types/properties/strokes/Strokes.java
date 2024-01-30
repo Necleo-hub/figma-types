@@ -1,19 +1,25 @@
-package com.necleo.codemonkey.lib.types.figma.properties.strokes;
+package com.necleo.figma.types.properties.strokes;
 
+import java.util.List;
+
+import com.necleo.figma.types.enums.GradientType;
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import lombok.extern.jackson.Jacksonized;
 
 @Getter
-@NoArgsConstructor
-@AllArgsConstructor
+@Jacksonized
+@Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Strokes {
-  String type; // enum
+  GradientType type; // enum
   boolean visible;
-  int opacity;
+  double opacity;
+  // todo: riktam
   String BlendMode;
   Color color;
+  List<GradientStop> gradientStops;
+  List<List<Double>> gradientTransforms;
 }

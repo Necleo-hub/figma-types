@@ -1,7 +1,7 @@
-package com.necleo.codemonkey.lib.types.figma.properties.fills.subtypes;
+package com.necleo.figma.types.properties.fills.subtypes;
 
-import com.necleo.codemonkey.lib.types.figma.properties.fills.Fills;
-import com.necleo.codemonkey.lib.types.figma.properties.fills.enums.ScaleMode;
+import com.necleo.figma.types.properties.fills.Fills;
+import com.necleo.figma.types.properties.fills.enums.ScaleMode;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;

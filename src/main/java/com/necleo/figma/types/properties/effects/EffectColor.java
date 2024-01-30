@@ -1,4 +1,4 @@
-package com.necleo.codemonkey.lib.types.figma.properties.effects;
+package com.necleo.figma.types.properties.effects;
 
 import lombok.AccessLevel;
 import lombok.Builder;

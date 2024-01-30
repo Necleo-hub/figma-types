@@ -1,4 +1,4 @@
-package com.necleo.codemonkey.lib.types.figma.properties.vector.segment;
+package com.necleo.figma.types.properties.vector.segment;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

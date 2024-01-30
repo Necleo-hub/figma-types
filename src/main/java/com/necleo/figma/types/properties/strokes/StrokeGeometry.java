@@ -1,4 +1,4 @@
-package com.necleo.codemonkey.lib.types.figma.properties.strokes;
+package com.necleo.figma.types.properties.strokes;
 
 import lombok.AccessLevel;
 import lombok.Builder;

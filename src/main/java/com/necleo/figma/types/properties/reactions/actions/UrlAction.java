@@ -1,16 +1,15 @@
-package com.necleo.codemonkey.lib.types.figma.properties.reactions.actions;
+package com.necleo.figma.types.properties.reactions.actions;
 
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.experimental.FieldDefaults;
+import lombok.experimental.SuperBuilder;
+import lombok.extern.jackson.Jacksonized;
 
 @Getter
-public
-class UrlAction extends Action {
-    private String url;
-    // Specific fields and methods for URL type
-
-    // Getter and Setter for 'url'
-    @Override
-    public ActionType getType() {
-        return ActionType.URL;
-    }
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+@SuperBuilder
+@Jacksonized
+public class UrlAction extends Action {
+  String url;
 }

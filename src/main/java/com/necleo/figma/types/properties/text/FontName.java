@@ -1,13 +1,16 @@
-package com.necleo.codemonkey.lib.types.figma.properties.text;
+package com.necleo.figma.types.properties.text;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+import lombok.extern.jackson.Jacksonized;
+
+// todo: riktam
 
 @Getter
-@NoArgsConstructor
-@AllArgsConstructor
+@Builder
+@Jacksonized
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class FontName {
-  private String family;
-  private String style;
+  String family;
+  String style;
 }

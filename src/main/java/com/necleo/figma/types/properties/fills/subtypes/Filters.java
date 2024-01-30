@@ -1,4 +1,4 @@
-package com.necleo.codemonkey.lib.types.figma.properties.fills.subtypes;
+package com.necleo.figma.types.properties.fills.subtypes;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
